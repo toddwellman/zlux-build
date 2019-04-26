@@ -31,7 +31,7 @@
     <ant antfile="production.xml" dir="." target="publishVersion"/>
   </target>
 
-  <target name="deploy" description="Deploy ZLUX with the plugins defined in a 'pluginDir' directory">
+  <target name="deploy" description="Deploy ZLUX with the plugins defined in a 'pluginDir' directory" depends="cleanDeploy">
     <ant antfile="deploy.xml" dir="."/>
   </target>
   

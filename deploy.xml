@@ -73,10 +73,10 @@
     </exec>
 
     <copy unless:set="isZos" todir="${deploy}/instance/ZLUX/plugins">
-      <fileset dir="${deploy}/product/ZLUX/plugins"/>
+      <fileset dir="${pluginDir}" includes="*.json"/>
     </copy>
     <exec if:set="isZos" executable="sh">
-      <arg line="-c 'cp -pR ${deploy}/product/ZLUX/plugins/ ${deploy}/instance/ZLUX/plugins'"/>
+      <arg line="-c 'cp -pR ${pluginDir}/*.json ${deploy}/instance/ZLUX/plugins'"/>
     </exec>
     
     <copy unless:set="isZos" todir="${deploy}/instance/ZLUX/serverConfig">
